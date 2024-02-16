@@ -7,8 +7,6 @@ from googleapiclient.discovery import build
 dotenv_path = os.path.join(os.path.dirname(__file__), ".env")
 load_dotenv(dotenv_path)
 
-# 公式ではapiclient.discoveryだがVSCodeの補完を働かせるために変更
-
 YOUTUBE_API_SERVICE_NAME = "youtube"
 YOUTUBE_API_VERSION = "v3"
 YOUTUBE_API_KEY = os.getenv("YOUTUBE_DATA_API_KEY")
