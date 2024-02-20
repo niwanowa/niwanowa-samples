@@ -13,3 +13,11 @@ variable "resource_static_web_apps_prefix" {
 variable "resource_group_name" {
   type       = string
 }
+
+variable "resource_group_location" {
+  type       = string  
+}
+
+variable "subnet_id" {
+  type       = string
+}

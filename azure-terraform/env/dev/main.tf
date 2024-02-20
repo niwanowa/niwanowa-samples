@@ -18,5 +18,7 @@ module "static_web_apps" {
     source = "../../modules/static_web_apps"
   
     resource_group_name = module.resource_group.resource_group_name
+    resource_group_location = module.resource_group.resource_group_location
     static_web_apps_location = var.static_web_apps_location
+    subnet_id =  module.virtual_network.subnet_id
 }
