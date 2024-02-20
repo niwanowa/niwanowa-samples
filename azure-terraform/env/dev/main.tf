@@ -14,3 +14,9 @@ module "virtual_network" {
     resource_virtual_network_location = var.default_location
 }
 
+module "static_web_apps" {
+    source = "../../modules/static_web_apps"
+  
+    resource_group_name = module.resource_group.resource_group_name
+    static_web_apps_location = var.static_web_apps_location
+}

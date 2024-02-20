@@ -9,3 +9,9 @@ variable "default_location" {
   default     = "japaneast"
   description = "Location of the resource group."
 }
+
+variable "static_web_apps_location" {
+  type = string
+  default = "eastasia"
+  description = "The location/region where the static web apps should be created"
+}
