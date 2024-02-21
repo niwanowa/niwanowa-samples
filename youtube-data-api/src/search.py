@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from googleapiclient.discovery import build
 
 # .envファイルのパスを指定して読み込む
-dotenv_path = os.path.join(os.path.dirname(__file__), ".env")
+dotenv_path = os.path.join(os.path.dirname(__file__), "../.env")
 load_dotenv(dotenv_path)
 
 YOUTUBE_API_SERVICE_NAME = "youtube"
