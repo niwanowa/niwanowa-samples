@@ -11,6 +11,8 @@ python-dotenv = "^1.0.1"
 google-api-python-client = "^2.117.0"
 httplib2 = "^0.22.0"
 google-auth-oauthlib = "^1.2.0"
+bs4 = "^0.0.2"
+requests = "^2.31.0"
 
 
 [build-system]
