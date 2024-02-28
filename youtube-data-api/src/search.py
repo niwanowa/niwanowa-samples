@@ -3,6 +3,8 @@ from dotenv import load_dotenv
 
 from googleapiclient.discovery import build
 
+import scraping_livefans
+
 # .envファイルのパスを指定して読み込む
 dotenv_path = os.path.join(os.path.dirname(__file__), "../.env")
 load_dotenv(dotenv_path)
@@ -21,9 +23,17 @@ def youtube_search(youtube, word):
         .execute()
     )
     print(type(response))  # <class 'dict'>
+    # 検索結果のうち、最初の１件のタイトルと動画IDを返却
     for item in response.get("items", []):
-        print(item["snippet"]["title"], item["id"]["videoId"])
+        return item["snippet"]["title"], item["id"]["videoId"]
 
 
-search_word = "夜に駆ける"
-youtube_search(youtube, search_word)
+URL = "https://www.livefans.jp/events/1643325"
+artistName, setlist = scraping_livefans.scraping_livefans(URL)
+print(artistName, setlist)
+
+for song in setlist:
+    print(artistName, song)
+    search_word = artistName + " " + song
+    video_title, videoId = youtube_search(youtube, search_word)
+    print(video_title, videoId)
