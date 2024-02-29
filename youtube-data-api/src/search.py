@@ -27,13 +27,13 @@ def youtube_search(youtube, word):
     for item in response.get("items", []):
         return item["snippet"]["title"], item["id"]["videoId"]
 
+if __name__ == "__main__":
+    URL = "https://www.livefans.jp/events/1643325"
+    artistName, setlist = scraping_livefans.scraping_livefans(URL)
+    print(artistName, setlist)
 
-URL = "https://www.livefans.jp/events/1643325"
-artistName, setlist = scraping_livefans.scraping_livefans(URL)
-print(artistName, setlist)
-
-for song in setlist:
-    print(artistName, song)
-    search_word = artistName + " " + song
-    video_title, videoId = youtube_search(youtube, search_word)
-    print(video_title, videoId)
+    for song in setlist:
+        print(artistName, song)
+        search_word = artistName + " " + song
+        video_title, videoId = youtube_search(youtube, search_word)
+        print(video_title, videoId)
