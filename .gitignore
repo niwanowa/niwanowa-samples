@@ -39,7 +39,7 @@ override.tf.json
 terraform.rc
 
 # python
-*.pyc
+**/__pycache__/**
 
 # Mac
 .DS_Store
