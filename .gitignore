@@ -1,4 +1,4 @@
-youtube-data-api/.env
+**/.env
 youtube-data-api/client_secrets.json
 azure-terraform/.principal
 
@@ -45,4 +45,3 @@ terraform.rc
 .DS_Store
 .idea
 
-google-reverse-geocoding/.env
