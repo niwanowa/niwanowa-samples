@@ -45,3 +45,4 @@ terraform.rc
 .DS_Store
 .idea
 
+google-reverse-geocoding/.env
