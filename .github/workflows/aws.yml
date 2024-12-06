@@ -20,7 +20,7 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-west-2
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_SECRET_ACCESS_KEY }}:role/YourRoleName
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
 
       - name: Run AWS CLI command
         run: aws sts get-caller-identity
