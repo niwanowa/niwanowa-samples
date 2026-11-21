@@ -1,0 +1,9 @@
+filter @type = "REPORT"
+  | parse @log /\d+:\/aws\/lambda\/(?<function>.*)/
+| parse @message /Billed Restore Duration: (?<@restore_duration_ms>[0-9\.]+)/
+| fields
+  greatest(@restore_duration_ms, 0) as restoreDuration
+| stats
+  avg(coalesce(@initDuration,0)+coalesce(restoreDuration,0)) as avg,
+group by function, (ispresent(@initDuration) or ispresent(restoreDuration)) as coldstart
+  | sort by coldstart desc
