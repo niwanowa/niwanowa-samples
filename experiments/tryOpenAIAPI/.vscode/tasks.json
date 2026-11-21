@@ -1,0 +1,14 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "type": "shell",
+        "command": "poetry run python ${file}",
+        "group": {
+            "kind": "build",
+            "isDefault": true
+        },
+        "label": "poetry: run"
+      }
+    ]
+  }
