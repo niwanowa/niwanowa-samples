@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>React Sample</title>
+    </head>
+    <body>
+        <!-- 描画のルート -->
+        <div id="root"></div>
+
+        <!-- ReactとReactDOM(両方とも開発版)-->
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+        <script>
+            // ここにコードを記述する
+            const dish = React.createElement("h1", {id: "recipe-0"}, "Baked Salmon");
+            const desert = React.createElement("h2", null, "Coconut Pie");
+            // ReactDOM.render([dish,desert], document.getElementById("root"));
+
+            console.log(dish);
+
+            const items = React.createElement(
+                "ul",null,
+                React.createElement("li",null,"2 lb Salmon"),
+                React.createElement("li",null,"5 sprigs of rosemary"),
+                React.createElement("li",null,"2 tablespoons olive oil"),
+                React.createElement("li",null,"2 small lemons"),
+                React.createElement("li",null,"1 teaspoon kosher salt"),
+                React.createElement("li",null,"4 cloves of chopped garlic"),
+            );
+
+            console.log(items);
+
+            const recipe = React.createElement(
+                "section",
+                {id: "baked-salmon"},
+                dish,
+                items
+            );
+            ReactDOM.render(recipe, document.getElementById("root"));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>React Sample</title>
+    </head>
+    <body>
+        <!-- 描画のルート -->
+        <div id="root"></div>
+
+        <!-- ReactとReactDOM(両方とも開発版)-->
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+        <section id="baked-salmon">
+            <h1>Baked Salmon</h1>
+            <ul class="ingredients">
+                <li>1 lb Salmon</li>
+                <li>1 cup Pine Nuts</li>
+                <li>2 cups Butter Lettuce</li>
+                <li>1 Yellow Squash</li>
+                <li>1/2 cup Olive Oil</li>
+                <li>3 cloves of Garlic</li>
+            </ul>
+            <section class="instructions">
+                <h2>Cooking Instructions</h2>
+                <p>Preheat the oven to 350 degrees.</p>
+                <p>Spread the olive oil around a glass baking dish.</p>
+                <p>Add the salmon, garlic, and pine nuts to the dish.</p>
+                <p>Bake for 15 minutes.</p>
+                <p>Add the yellow squash and put back in the oven for 30 mins.</p>
+                <p>Remove from oven and let cool for 15 minutes. Add the lettuce and serve.</p>
+            </section>
+        </section>
+        <script>
+            // ここにコードを記述する
+            const dish = React.createElement("h1", {id: "recipe-0"}, "Baked Salmon");
+            const desert = React.createElement("h2", null, "Coconut Pie");
+            ReactDOM.render([desert,dish], document.getElementById("root"));
+
+            console.log(dish);
+        </script>
+    </body>
+</html>
